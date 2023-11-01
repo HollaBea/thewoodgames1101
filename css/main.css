@@ -1,0 +1,57 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 查詢css供應商前綴為符合瀏覽器畫面 */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 980px;
+    margin: 0 auto;
+    /* 置中語法 */
+}
+
+.main>header {
+    text-align: center;
+}
+
+.main>header>img.logo {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 子選擇器用>可以精準知道位置 */
+
+.main>nav {
+    border-top: 1px solid #898000;
+    border-bottom: 1px solid #898000;
+    margin-bottom: 20px;
+}
+
+.main>nav>ul>li {
+    display: inline-block;
+    width: 33%;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.en_text{
+    color: #898000;
+}
