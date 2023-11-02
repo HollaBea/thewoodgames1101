@@ -26,7 +26,9 @@ ul {
 .main {
     width: 100$;
     max-width: 980px;
+    /* RWD設定規則寬百分比100%  */
     margin: 0 auto;
+    padding: auto;
 
     /* 置中語法可將塊級元素block置中
     margin-top: 0;
@@ -44,6 +46,7 @@ ul {
 #bea {
     background-color: blueviolet;
 }
+
 /* 子選擇器用>可以精準知道位置 */
 .main>header>img.logo {
     width: 150px;
@@ -59,11 +62,19 @@ ul {
     margin-bottom: 20px;
 }
 
+main>nav>ul {
+    display: flex;
+}
+
 .main>nav>ul>li {
     display: inline-block;
     width: 33.33%;
     margin-right: -5px;
     /* 空白間距內縮 */
+    /* /  * 這是display flex的排版方式 */
+    */
+    /* 這display inllina2的排版方式 */
+    flex: 1;
     height: 70px;
     line-height: 70px;
     text-align: center;
@@ -78,16 +89,16 @@ ul {
     position: relative;
 }
 
-.main>nav>ul>li>.nav_item>.nav_child{
+.main>nav>ul>li>.nav_item>.nav_child {
     /* 選單製作 */
-    display: none; 
+    display: none;
     position: absolute;
     width: 100%;
     line-height: 20px;
-    background-color: #898000;    
+    background-color: #898000;
 }
 
-.main>nav>ul>li>.nav_item>.nav_child a{
+.main>nav>ul>li>.nav_item>.nav_child a {
     display: block;
     /* 連結擴展最大 */
     color: #fff;
@@ -108,7 +119,7 @@ ul {
     /* 滑鼠滑過的顏色效果 */
 }
 
-.main>nav>ul>li>.nav_item>.nav_child a:hover{
+.main>nav>ul>li>.nav_item>.nav_child a:hover {
     background-color: #000;
 }
 
@@ -127,4 +138,15 @@ ul {
 .a111 {
     background-color: #898000;
     display: inline-block;
+}
+
+@media(max-width:992px) {
+    /* 手機設定直700~900之間 */
+    .main>nav>ul {
+        flex-direction: column;
+    }
+    .main>nav>ul>li {
+        width: 100%
+    }
+
 }
