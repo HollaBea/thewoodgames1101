@@ -28,7 +28,7 @@ ul {
     max-width: 980px;
     /* RWD設定規則寬百分比100%  */
     margin: 0 auto;
-    padding: auto;
+    padding: 0 15px;
 
     /* 置中語法可將塊級元素block置中
     margin-top: 0;
@@ -64,6 +64,7 @@ ul {
 
 main>nav>ul {
     display: flex;
+
 }
 
 .main>nav>ul>li {
@@ -72,7 +73,6 @@ main>nav>ul {
     margin-right: -5px;
     /* 空白間距內縮 */
     /* /  * 這是display flex的排版方式 */
-    */
     /* 這display inllina2的排版方式 */
     flex: 1;
     height: 70px;
@@ -157,16 +157,50 @@ main>nav>ul {
 .shop_content>.item_wrap>.item_row {
     display: flex;
     padding: 15px;
-}
+    gap: 15px;
+    border-bottom: #898000;}
 
+.shop_content>.item_wrap>.item_row:last-child {
+    border-bottom: none;
+}
+/* 
 .shop_content>.item_wrap>.item_row>div {
    flex: 1;
-}
+} */
 
 /* .shop_content>.item_wrap>.item_left>.item_mid{
     padding-bottom: 7px;
     color: #c20808;
 } */
+.shop_content>.item_wrap>.item_row >.item_left{
+    width: 20%;
+}
+.shop_content>.item_wrap>.item_row >.item_mid{
+    width: 51%;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column ;
+    /* justify-content: space-between;這個可以平均分配 */
+}
+
+.item_mid>h2{
+    font-size: 30px;
+    margin: 0;
+    line-height: 25px;
+    margin-bottom: auto;
+}
+
+.item_mid>p{
+    /* position絕招 position: absolute;
+    bottom: 0; */
+    margin: 0;
+    color: #898000;
+
+}
+
+.shop_content>.item_wrap>.item_row >.item_right{
+    width: 40%;
+}
 
 .shop_content>.item_wrap>.item_row >.item_right .item_title {
     font-weight: bold;
@@ -174,14 +208,20 @@ main>nav>ul {
     padding-bottom: 7px;
 }
 
-.shop_content>.item_wrap>.item_row >.item_right .item_child .item_child{
+.shop_content>.item_wrap>.item_row >.item_right .item_child{
     display: flex;
+    margin-top: 10px;
+    flex: 1;
 } 
+
+.item_child>.price_txt>.item_child_parent {
+    flex: 1;
+}
 
 .price_txt{
     font-weight: bold;
     font-size: 17px;
-    padding-bottom: 3px;
+    padding-top: 9px;
     color: #898000;
     margin-bottom: 13px;
 }
@@ -193,15 +233,17 @@ main>nav>ul {
 }
 
 .buy_btn{
-    margin-left: 210px;
+    /* margin-left: 240px;
+    margin-top: -50px; */
     text-decoration: none;
     background-color: #898000;
     color: #fff;
     padding: 10px;
     padding-top: 10px;
-    display: block;
+    display: inline;
     border-radius: 15px;
     /* 圓角 */
+    
 }
 
 .buy_btn:hover {
@@ -211,24 +253,36 @@ main>nav>ul {
 
 
 
-.f_list {
+footer {
     background-color: #898000;
-    display: inline-block;
+    /* display: inline-block;
     display: block;
     text-align: center;
     color: #fff;
     text-decoration: none;
+    display: flex */
+    margin-top: auto ;
 }
 
 @media(max-width:992px) {
-
     /* 手機設定直700~900之間 */
     .main>nav>ul {
         flex-direction: column;
     }
-
     .main>nav>ul>li {
         width: 100%
+    }
+    .shop_content>.item_wrap>.item_row {
+        flex-direction: column;
+    }
+    .shop_content>.item_wrap>.item_row >.item_left{
+        width: 100%;
+    }
+    .shop_content>.item_wrap>.item_row >.item_mid{
+        width: 100%;
+    }
+    .shop_content>.item_wrap>.item_row >.item_right{
+        width: 100%;
     }
 
 }
