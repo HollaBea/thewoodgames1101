@@ -87,6 +87,8 @@ main>nav>ul {
     color: #000;
     display: block;
     position: relative;
+    width: 100%;
+    z-index: 5;
 }
 
 .main>nav>ul>li>.nav_item>.nav_child {
@@ -158,11 +160,13 @@ main>nav>ul {
     display: flex;
     padding: 15px;
     gap: 15px;
-    border-bottom: #898000;}
+    border-bottom: #898000;
+}
 
 .shop_content>.item_wrap>.item_row:last-child {
     border-bottom: none;
 }
+
 /* 
 .shop_content>.item_wrap>.item_row>div {
    flex: 1;
@@ -172,25 +176,26 @@ main>nav>ul {
     padding-bottom: 7px;
     color: #c20808;
 } */
-.shop_content>.item_wrap>.item_row >.item_left{
+.shop_content>.item_wrap>.item_row>.item_left {
     width: 20%;
 }
-.shop_content>.item_wrap>.item_row >.item_mid{
+
+.shop_content>.item_wrap>.item_row>.item_mid {
     width: 51%;
     /* position: relative; */
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     /* justify-content: space-between;這個可以平均分配 */
 }
 
-.item_mid>h2{
+.item_mid>h2 {
     font-size: 30px;
     margin: 0;
     line-height: 25px;
     margin-bottom: auto;
 }
 
-.item_mid>p{
+.item_mid>p {
     /* position絕招 position: absolute;
     bottom: 0; */
     margin: 0;
@@ -198,27 +203,27 @@ main>nav>ul {
 
 }
 
-.shop_content>.item_wrap>.item_row >.item_right{
+.shop_content>.item_wrap>.item_row>.item_right {
     width: 40%;
 }
 
-.shop_content>.item_wrap>.item_row >.item_right .item_title {
+.shop_content>.item_wrap>.item_row>.item_right .item_title {
     font-weight: bold;
     border-bottom: 1px solid #898000;
     padding-bottom: 7px;
 }
 
-.shop_content>.item_wrap>.item_row >.item_right .item_child{
+.shop_content>.item_wrap>.item_row>.item_right .item_child {
     display: flex;
     margin-top: 10px;
     flex: 1;
-} 
+}
 
 .item_child>.price_txt>.item_child_parent {
     flex: 1;
 }
 
-.price_txt{
+.price_txt {
     font-weight: bold;
     font-size: 17px;
     padding-top: 9px;
@@ -226,13 +231,13 @@ main>nav>ul {
     margin-bottom: 13px;
 }
 
-.game_txt{
+.game_txt {
     font-weight: bold;
     padding-bottom: 3px;
     color: #000;
 }
 
-.buy_btn{
+.buy_btn {
     /* margin-left: 240px;
     margin-top: -50px; */
     text-decoration: none;
@@ -243,7 +248,6 @@ main>nav>ul {
     display: inline;
     border-radius: 15px;
     /* 圓角 */
-    
 }
 
 .buy_btn:hover {
@@ -251,37 +255,91 @@ main>nav>ul {
     /* 滑鼠滑過的顏色效果 */
 }
 
-
-
 footer {
     background-color: #898000;
-    /* display: inline-block;
-    display: block;
-    text-align: center;
+    margin-top: 50px;
+    font-weight: bold;
     color: #fff;
+    letter-spacing: 1.5px;
+    height: 120px;
+
+}
+
+/* flex解決方案1
+footer>.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    讓子元素垂直置中
+    height: 120px;
+} */
+/* footer>.main>ul {
+    display: flex;
+} */
+
+/* flex解決方案2 */
+/* footer>.main {
+    display: flex;
+    height: 120px;
+    padding-top: 20px;
+}
+footer>.main>ul {
+    flex:1;
+    display: flex;
+}
+footer>.main>div {
+    flex:1;
+    text-align: right;
+} */
+
+/* flex解決方案3 */
+footer>.main {
+    display: flex;
+    height: 300px;
+    padding-top: 20px;
+}
+
+footer>.main>ul {
+    display: flex;
+    margin-right: auto;
+    gap: 15px;
+}
+
+footer>.main>ul>li>a {
     text-decoration: none;
-    display: flex */
-    margin-top: auto ;
+    color: #fff;
+    padding-bottom: 3px;
+}
+
+footer>.main>ul>li>a:hover {
+    /* text-decoration:underline; */
+    border-bottom: 1px solid #fff;
 }
 
 @media(max-width:992px) {
+
     /* 手機設定直700~900之間 */
     .main>nav>ul {
         flex-direction: column;
     }
+
     .main>nav>ul>li {
         width: 100%
     }
+
     .shop_content>.item_wrap>.item_row {
         flex-direction: column;
     }
-    .shop_content>.item_wrap>.item_row >.item_left{
+
+    .shop_content>.item_wrap>.item_row>.item_left {
         width: 100%;
     }
-    .shop_content>.item_wrap>.item_row >.item_mid{
+
+    .shop_content>.item_wrap>.item_row>.item_mid {
         width: 100%;
     }
-    .shop_content>.item_wrap>.item_row >.item_right{
+
+    .shop_content>.item_wrap>.item_row>.item_right {
         width: 100%;
     }
 
